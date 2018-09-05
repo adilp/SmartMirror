@@ -1,0 +1,1 @@
+/Users/Adil/Desktop/projects/MagicMirror/SmartMirror/config.js
