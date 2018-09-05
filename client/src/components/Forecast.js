@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Col, Row } from 'react-bootstrap';
 import { getForecast } from '../lib/fetch';
+import { getForcastWeather, fileFromInt } from '../lib/smhi'
 import moment from 'moment';
 import Skycons from 'react-skycons';
 const config = require('../config');
@@ -40,6 +41,7 @@ const styles = {
 };
 
 export default class Forecast extends React.Component {
+  
   static propTypes = {
     visible: React.PropTypes.bool,
   };
@@ -63,6 +65,7 @@ export default class Forecast extends React.Component {
     this.handleNewForecast = this.handleNewForecast.bind(this);
   }
 
+
   componentDidMount() {
     this.timerID = setInterval(() => this.refreshForecast(), 1000 * 60 * 10);
     this.refreshForecast();
@@ -72,8 +75,9 @@ export default class Forecast extends React.Component {
     clearInterval(this.timerID);
   }
 
+  
   refreshForecast() {
-    getForecast()
+    getForcastWeather()
       .then(res => {
         console.log(res);
         const f = {
@@ -97,7 +101,7 @@ export default class Forecast extends React.Component {
     return (
       <div hidden={!this.props.visible} style={styles.container} className="pull-right">
         <p style={styles.locationLabel}> {config.forecastLabelName} </p>
-        <Row style={styles.daytimeHours}>
+{/*        <Row style={styles.daytimeHours}>
           <Col xs={6}>
             <p className="pull-left">
               <span className="wi wi-sunrise" /> {moment(this.state.weather.sunrise, ['h:mm A']).format('HH:mm')}
@@ -109,7 +113,7 @@ export default class Forecast extends React.Component {
             </p>
           </Col>
         </Row>
-
+    */}
         {this.state.weather.forecast.map(function(object, i) {
           if (i > 4) return null;
           return (

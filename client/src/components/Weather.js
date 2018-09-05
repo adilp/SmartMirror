@@ -11,6 +11,12 @@ const styles = {
     margin: 0,
     textAlign: 'right',
   },
+  currentWeather: {
+    color: 'white',
+    fontSize: '8.8em',
+    margin: 0,
+    textAlign: 'right'
+  },
   weatherImg: {
     maxWidth: '100%',
     height: 'auto',
@@ -49,6 +55,7 @@ export default class Weather extends React.Component {
   }
 
   render() {
+    console.log("Current weather: " + this.state.weather.temp);
     let weatherSymbol;
     if (this.state.weather.weatherSymbol) {
       weatherSymbol = (
@@ -87,7 +94,7 @@ export default class Weather extends React.Component {
       <div hidden={!this.props.visible} style={styles.container}>
         <Row>
           <Col xs={8}>
-            <p style={styles.weather}>{this.state.weather.temp} °C</p>
+            <p style={styles.currentWeather}>{this.state.weather.temp} °F</p>
             <p style={styles.weather}>
               {this.props.phrases.feels_like} {this.state.weather.windChill} °C
             </p>

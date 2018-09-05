@@ -59,17 +59,43 @@ const getKeyName = key => {
 };
 
 export function getCurrentWeather(callback) {
-  const url =
-    'http://opendata-download-metfcst.smhi.se/api/category/pmp2g/version/2/geotype/point/lon/' +
-    config.SMHI_COORD.longitude +
-    '/lat/' +
-    config.SMHI_COORD.latitude +
-    '/data.json';
+  const url = config.currentWeatherAPI
+    // 'http://opendata-download-metfcst.smhi.se/api/category/pmp2g/version/2/geotype/point/lon/' +
+    // config.SMHI_COORD.longitude +
+    // '/lat/' +
+    // config.SMHI_COORD.latitude +
+    // '/data.json';
 
   return fetch(url)
     .then(checkStatus)
+    // .then(function(response) {return console.log("hellos" + response.json());})
     .then(res => res.json())
-    .then(extractCurrentWeather);
+    .then(res => res[0])
+    // .then(extractCurrentWeather);
+    .then(extractWeather);
+}
+
+export function getForcastWeather(callback){
+  const url = config.forecastAPI
+
+  return fetch(url)
+  .then(checkStatus)
+  .then(res => res.json())
+  .then(res => res[0].DailyForecasts)
+  .then(extractForecasts);
+}
+
+function extractForecasts(forecast) {
+  return console.log(JSON.stringify(forecast.Temperature));
+}
+
+function extractWeather(forecast) {
+  
+  const nowForecast = {};
+  nowForecast['temp'] = forecast.Temperature.Imperial.Value
+  nowForecast['weatherSymbol'] = forecast.WeatherIcon
+  // console.log(forecast.Temperature.Imperial.Value);
+  return nowForecast
 }
 
 function extractCurrentWeather(forecast) {

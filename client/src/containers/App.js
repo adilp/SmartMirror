@@ -184,6 +184,7 @@ export default class App extends React.Component {
             padding: 60,
             paddingBottom: 0,
           }}>
+          <p>News</p>
           {news}
         </Row>
       </div>

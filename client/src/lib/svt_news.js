@@ -16,6 +16,8 @@ export function getLatestNews(callback) {
 
   return fetch(url)
     .then(checkStatus)
-    .then(res => res.json())
-    .then(res => res.items);
+    .then(function(response) {return response.json();})
+    .then(res => res.articles);
+    // .then(function(myJson) { console.log(JSON.stringify(myJson))});
+    
 }

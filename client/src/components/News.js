@@ -57,6 +57,7 @@ export default class News extends React.Component {
   }
 
   handleNewNews(articles) {
+    console.log(articles)
     this.setState({
       articles: articles,
       subArticles: articles.slice(0, this.state.numArticles),

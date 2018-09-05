@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "babel": {
-    "presets": ["es2015", "stage-0"]
+    "presets": [
+      "es2015",
+      "stage-0"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -17,6 +20,7 @@
     "babel-preset-stage-0": "6.5.0",
     "body-parser": "^1.16.0",
     "bootstrap": "^3.3.7",
+    "dezalgo": "^1.0.3",
     "dotenv": "^2.0.0",
     "ds18x20": "^0.2.0",
     "express": "^4.13.3",
@@ -31,7 +35,7 @@
     "node-record-lpcm16": "^0.1.8",
     "node-skanetrafiken": "0.0.3",
     "node-uuid": "^1.4.7",
-    "npm": "^4.0.5",
+    "npm": "^6.4.0",
     "onoff": "^1.1.1",
     "react": "^15.4.1",
     "react-addons-css-transition-group": "^15.4.1",
@@ -41,7 +45,7 @@
     "reactstrap": "^3.9.5",
     "recharts": "^1.0.0-alpha.0",
     "request": "^2.79.0",
-    "serialport": "^4.0.7",
+    "serialport": "^6.2.2",
     "snowboy": "^1.1.0",
     "speaker": "^0.3.0",
     "spotify-web-api-node": "^3.0.0",
@@ -57,6 +61,7 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "concurrently": "^3.1.0",
-    "mocha": "^4.0.0"
+    "mocha": "^4.0.0",
+    "react-dev-utils": "^5.0.2"
   }
 }
