@@ -15,12 +15,13 @@ const config = {
     latitude: '55.6',
   },
   forecastLabelName: 'Birmingham',
-  // svtNewsUrl:
-  //   'https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=22be964d1de0442384d56d791c039e53',
-  weatherAPI: 'http://dataservice.accuweather.com/forecasts/v1/daily/5day/346630?apikey=LrXGcUQ5nBJAwODJeuSVvuU39cdpAvKu',
-  // currentWeatherAPI: 'http://dataservice.accuweather.com/currentconditions/v1/346630?apikey=LrXGcUQ5nBJAwODJeuSVvuU39cdpAvKu' ,
-  currentWeatherAPI: 'http://5b806d9597d8e500144f2d35.mockapi.io/weather',
-  forecastAPI: 'http://5b806d9597d8e500144f2d35.mockapi.io/forecast',
+  svtNewsUrl:
+    'https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=22be964d1de0442384d56d791c039e53',
+  forecastAPI:'http://dataservice.accuweather.com/forecasts/v1/daily/5day/346630?apikey=LrXGcUQ5nBJAwODJeuSVvuU39cdpAvKu',
+  //weatherAPI: 'http://dataservice.accuweather.com/forecasts/v1/daily/5day/346630?apikey=LrXGcUQ5nBJAwODJeuSVvuU39cdpAvKu',
+   currentWeatherAPI: 'http://dataservice.accuweather.com/currentconditions/v1/346630?apikey=LrXGcUQ5nBJAwODJeuSVvuU39cdpAvKu' ,
+  //currentWeatherAPI: 'http://5b806d9597d8e500144f2d35.mockapi.io/weather',
+  //forecastAPI: 'http://5b806d9597d8e500144f2d35.mockapi.io/forecast',
 
   serverBaseURL:
     process.env.NODE_ENV === 'production' ? 'http://localhost:3001' : 'http://localhost:3000',
