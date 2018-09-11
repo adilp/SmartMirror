@@ -77,7 +77,7 @@ export default class Clock extends React.Component {
             <Row>
               <Col xs={12}>
                 <div style={styles.clock}>
-                  {this.state.date.format('HH:mm')}
+                  {this.state.date.format('hh:mm a')}
                   <span style={styles.clockSeconds}>{this.state.date.format('ss')}</span>
                 </div>
               </Col>
