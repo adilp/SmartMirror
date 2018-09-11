@@ -68,7 +68,27 @@ export default class Weather extends React.Component {
     } else {
       weatherSymbol = null;
     }
-
+    let windDirectionSymbol;
+    if (this.state.weather.windDirection) {
+      windDirectionSymbol = (
+        <img
+          style={{
+            position: 'absolute',
+            right: 40,
+            textAlign: 'right',
+            marginTop: 20,
+            marginLeft: 0,
+            maxWidth: '16%',
+            height: 'auto',
+            WebkitTransform: 'rotate(' + this.state.weather.windDirection + 'deg)',
+          }}
+          role="presentation"
+          src={require('../../resources/weather-icons/wind_arrow.png')}
+        />
+      );
+    } else {
+      windDirectionSymbol = null;
+    }
 
     return (
       <div hidden={!this.props.visible} style={styles.container}>
@@ -81,7 +101,7 @@ export default class Weather extends React.Component {
             <p style={styles.weather}>
               {this.props.phrases.wind_speed} {this.state.weather.windVelocity} m/s
             </p>
-            
+            {windDirectionSymbol}
           </Col>
           <Col style={{ textAlign: 'center', paddingLeft: 0 }} xs={4}>
             {weatherSymbol}
