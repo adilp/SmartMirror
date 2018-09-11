@@ -5,7 +5,7 @@ import { getForecast } from '../lib/fetch';
 import { getForcastWeather, fileFromInt } from '../lib/smhi'
 import moment from 'moment';
 import Skycons from 'react-skycons';
-const config = require('../config');
+const config = require('../../../config');
 
 const styles = {
   container: {},

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const config = require('../config');
+const config = require('../../../config');
 const phrases = require(`../../../locales/${config.language}.json`).client;
 
 import Clock from '../components/Clock';
